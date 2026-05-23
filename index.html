@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUA - Red Universitaria Ambiental</title>
+    
+    <!-- Tailwind CSS por CDN para los estilos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconos de Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Fuentes para mejorar el diseño -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        
+        /* --- ANIMACIONES DE ENTRADA PORTADA PRINCIPAL --- */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInRight {
+            0% { opacity: 0; transform: translateX(50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        .animate-fade-in-right {
+            animation: fadeInRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        /* Retrasos para que entren en cascada */
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-450 { animation-delay: 450ms; }
+        .delay-500 { animation-delay: 500ms; }
+        .delay-600 { animation-delay: 600ms; }
+
+        /* Estilo especial para el borde de las letras "SOBRE NOSOTROS" */
+        .text-outline-wood {
+            -webkit-text-stroke: 1.5px #A8C5C3;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-white overflow-x-hidden">
+
+    <!-- =========================================================
+         BARRA SUPERIOR (REDES SOCIALES)
+         ========================================================= -->
+    <div class="bg-[#0A1A12] text-white py-2 px-6 lg:px-12 flex justify-end items-center gap-5 relative z-50 shadow-md w-full">
+        <span class="text-xs font-bold tracking-widest text-[#A3D95D] hidden md:block mr-1">SÍGUENOS:</span>
+        
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@rua.tingo.maria?_r=1&_t=ZS-96Z6Ap1KvIu" target="_blank" rel="noopener noreferrer" class="hover:text-[#A3D95D] transition transform hover:scale-110 flex items-center" title="TikTok">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
+        </a>
+        
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/ruaperu_unas?igsh=MTdneGljM2lxbWpldQ==" target="_blank" rel="noopener noreferrer" class="hover:text-[#A3D95D] transition transform hover:scale-110 flex items-center" title="Instagram">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/share/1V8a9oRDF6/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="hover:text-[#A3D95D] transition transform hover:scale-110 flex items-center" title="Facebook">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+        </a>
+    </div>
+
+    <!-- =========================================================
+         1. MENÚ PRINCIPAL (VISIBLE EN TODAS LAS PÁGINAS)
+         ========================================================= -->
+    <nav class="bg-white shadow-md relative z-40">
+        <div class="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                
+                <!-- Logo de la Institución -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-26 h-16  rounded-full flex items-center justify-center relative overflow-hidden shadow-sm">
+                        <img src="LOGO 1.png" alt="" class="w-full h-full object-contain scale-[1.2] p-1" />
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-black text-[#0B3D1D] tracking-tighter leading-none">RUA UNAS</span>
+                        <span class="text-xs text-gray-500 font-bold uppercase tracking-widest mt-1">
+                            RED UNIVERSITARIA AMBIENTAL
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Menú Desktop -->
+                <div class="hidden lg:flex items-center space-x-1 h-full">
+                    <a href="#" onclick="goToHome(event)" class="bg-[#041C0D] text-white px-6 py-2.5 rounded-lg font-bold text-sm flex items-center space-x-2 shadow-lg hover:bg-black transition">
+                        <span>INICIO</span>
+                    </a>
+                    
+                    <!-- Dropdown NOSOTROS -->
+                    <div class="relative group h-full flex items-center">
+                        <button class="text-[#041C0D] group-hover:bg-[#f3f4f6] group-hover:text-[#00175a] rounded-t-md font-bold text-sm px-4 py-3 flex items-center transition-colors duration-200">
+                            <i data-lucide="landmark" class="w-4 h-4 mr-2 hidden group-hover:inline-block text-[#00175a]"></i>
+                            NOSOTROS 
+                            <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i>
+                        </button>
+
+                        <!-- Contenido del Dropdown -->
+                        <div class="absolute left-0 top-[65%] hidden group-hover:block w-[260px] bg-white shadow-xl border-t-[3px] border-[#00175a] z-50">
+                            <ul class="flex flex-col py-2">
+                                <li>
+                                    <a href="#" onclick="goToAbout(event)" class="flex items-center px-6 py-3.5 text-[13px] font-bold text-[#00175a] hover:bg-[#f8f9fa] transition-colors">
+                                        <i data-lucide="chevron-right" class="w-4 h-4 mr-3 text-gray-400"></i>
+                                        QUIENES SOMOS
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="goToMission(event)" class="flex items-center px-6 py-3.5 text-[13px] font-bold text-[#00175a] hover:bg-[#f8f9fa] transition-colors">
+                                        <i data-lucide="chevron-right" class="w-4 h-4 mr-3 text-gray-400"></i>
+                                        MISION Y VISION
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="goToHistory(event)" class="flex items-center px-6 py-3.5 text-[13px] font-bold text-[#00175a] hover:bg-[#f8f9fa] transition-colors">
+                                        <i data-lucide="chevron-right" class="w-4 h-4 mr-3 text-gray-400"></i>
+                                        NUESTRA HISTORIA
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- AÑADIDO: Evento onclick para ir a Principios -->
+                                    <a href="#" onclick="goToPrinciples(event)" class="flex items-center px-6 py-3.5 text-[13px] font-bold text-[#00175a] hover:bg-[#f8f9fa] transition-colors">
+                                        <i data-lucide="chevron-right" class="w-4 h-4 mr-3 text-gray-400"></i>
+                                        PRINCIPIOS
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- Enlace al PDF del Directorio -->
+                                    <a href="WhatsApp%20Image%202026-05-21%20at%203.48.23%20PM%20(1).pdf" target="_blank" rel="noopener noreferrer" class="flex items-center px-6 py-3.5 text-[13px] font-bold text-[#00175a] hover:bg-[#f8f9fa] transition-colors">
+                                        <i data-lucide="file-text" class="w-4 h-4 mr-3 text-red-500 shrink-0"></i>
+                                        DIRECTORIO
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- CAMBIADO: Ahora el botón de ACTIVIDADES te lleva primero a "Súmate a nuestra causa" (goToJoin) -->
+                    <a href="#" onclick="goToJoin(event)" class="text-[#041C0D] hover:text-[#A3D95D] font-bold text-sm px-4 py-2 flex items-center transition">
+                        ACTIVIDADES <i data-lucide="chevron-right" class="ml-1 rotate-90 w-3.5 h-3.5"></i>
+                    </a>
+                    
+                    <!-- DROPDOWN PARA DOCUMENTOS OFICIALES -->
+                    <div class="relative group h-full flex items-center">
+                        <button class="text-[#041C0D] group-hover:bg-[#f3f4f6] group-hover:text-[#00175a] rounded-t-md font-bold text-sm px-4 py-3 flex items-center transition-colors duration-200">
+                            DOCUMENTOS OFICIALES 
+                            <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i>
+                        </button>
+
+                        <!-- Contenido del Dropdown de Documentos -->
+                        <div class="absolute left-0 top-[65%] hidden group-hover:block w-[340px] bg-white shadow-xl border-t-[3px] border-[#00175a] z-50">
+                            <ul class="flex flex-col py-2">
+                                <li>
+                                    <!-- Enlace al PDF 1 -->
+                                    <a href="Funcionalidades%20de%20cada%20coordinación.docx[1].pdf" target="_blank" rel="noopener noreferrer" class="flex items-center px-6 py-3.5 text-[13px] font-bold text-[#00175a] hover:bg-[#f8f9fa] transition-colors leading-tight">
+                                        <i data-lucide="file-text" class="w-5 h-5 mr-3 text-red-500 shrink-0"></i>
+                                        FUNCIONALIDADES DE CADA COORDINACIÓN
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- Enlace al PDF 2 -->
+                                    <a href="REGLAMENTO%20INTERNO%20DE%20LA%20RUA%20PERÚ-%20NODO%20UNAS.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center px-6 py-3.5 text-[13px] font-bold text-[#00175a] hover:bg-[#f8f9fa] transition-colors leading-tight">
+                                        <i data-lucide="file-text" class="w-5 h-5 mr-3 text-red-500 shrink-0"></i>
+                                        REGLAMENTO INTERNO NODO UNAS
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- BOTÓN WHATSAPP (Reemplaza a Contáctenos) -->
+                    <a href="https://wa.me/51933128377?text=QUIERO%20UN%20POCO%20MAS%20DE%20INFORMACION%20SOBRE%20LA%20PAGINA%20WEB%2C%20LOS%20BENEFICIOS%20QUE%20BRINDARIA%20RUA" target="_blank" rel="noopener noreferrer" class="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold text-sm px-5 py-2.5 rounded-full flex items-center gap-2 transition shadow-md ml-2 transform hover:scale-105">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-23.2-115-65.1-157zM223.9 414.8c-32.9 0-65.1-8.8-93.3-25.5l-6.7-4-69.4 18.2 18.5-67.6-4.4-7c-18.3-29.2-28-62.9-28-97.7 0-101 82.2-183.1 183.3-183.1 53.9 0 104.5 21 142.6 59.2 38.1 38.1 59.1 88.8 59.1 142.7 0 101-82.2 183.1-183.1 183.1zm100.6-137.5c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+                        <div class="flex flex-col leading-none text-left">
+                            <span>CONTÁCTENOS</span>
+                            <span class="font-normal opacity-90 text-[10px] mt-0.5">933 128 377</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Botón Menú Móvil -->
+                <div class="lg:hidden">
+                    <button id="menu-btn" class="text-[#0B3D1D] p-2 hover:bg-gray-100 rounded-lg">
+                        <i id="menu-icon" data-lucide="menu" class="w-7 h-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dropdown Menú Móvil -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full pb-4 shadow-xl z-50">
+            <a href="#" onclick="goToHome(event)" class="block px-6 py-3 text-[#0B3D1D] font-bold bg-green-50">INICIO</a>
+            <a href="#" onclick="goToAbout(event)" class="block px-6 py-3 text-gray-700 font-semibold hover:bg-gray-50">NOSOTROS (QUIENES SOMOS)</a>
+            <a href="#" onclick="goToMission(event)" class="block px-6 py-3 text-gray-700 font-semibold hover:bg-gray-50">MISIÓN Y VISIÓN</a>
+            <a href="#" onclick="goToHistory(event)" class="block px-6 py-3 text-gray-700 font-semibold hover:bg-gray-50">NUESTRA HISTORIA</a>
+            <!-- AÑADIDO: Enlace a Principios en Móvil -->
+            <a href="#" onclick="goToPrinciples(event)" class="block px-6 py-3 text-gray-700 font-semibold hover:bg-gray-50">PRINCIPIOS</a>
+            
+            <!-- CAMBIADO: En móviles también dirige primero a "Súmate a nuestra causa" (goToJoin) -->
+            <a href="#" onclick="goToJoin(event)" class="block px-6 py-3 text-gray-700 font-semibold hover:bg-gray-50">ACTIVIDADES</a>
+            
+            <!-- Documentos Oficiales adaptado para Móviles -->
+            <div class="block px-6 py-3 text-gray-800 font-bold bg-gray-50/50 border-t border-b border-gray-100">DOCUMENTOS Y DIRECTORIO</div>
+            <a href="WhatsApp%20Image%202026-05-21%20at%203.48.23%20PM%20(1).pdf" target="_blank" rel="noopener noreferrer" class="flex items-center px-10 py-3 text-sm text-gray-600 font-medium hover:bg-gray-50">
+                <i data-lucide="file-text" class="w-4 h-4 mr-2 text-red-500 shrink-0"></i> Directorio
+            </a>
+            <a href="Funcionalidades%20de%20cada%20coordinación.docx[1].pdf" target="_blank" rel="noopener noreferrer" class="flex items-center px-10 py-3 text-sm text-gray-600 font-medium hover:bg-gray-50">
+                <i data-lucide="file-text" class="w-4 h-4 mr-2 text-red-500 shrink-0"></i> Funcionalidades
+            </a>
+            <a href="REGLAMENTO%20INTERNO%20DE%20LA%20RUA%20PERÚ-%20NODO%20UNAS.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center px-10 py-3 text-sm text-gray-600 font-medium hover:bg-gray-50">
+                <i data-lucide="file-text" class="w-4 h-4 mr-2 text-red-500 shrink-0"></i> Reglamento Interno
+            </a>
+
+            <a href="#" class="block px-6 py-3 text-gray-700 font-semibold hover:bg-gray-50 border-t border-gray-100">CONVOCATORIA</a>
+            
+            <!-- BOTÓN WHATSAPP MÓVIL (Reemplaza a Contáctenos) -->
+            <a href="https://wa.me/51933128377?text=QUIERO%20UN%20POCO%20MAS%20DE%20INFORMACION%20SOBRE%20LA%20PAGINA%20WEB%2C%20LOS%20BENEFICIOS%20QUE%20BRINDARIA%20RUA" target="_blank" rel="noopener noreferrer" class="flex items-center px-6 py-4 text-white bg-[#25D366] font-bold hover:bg-[#128C7E] transition gap-3 mt-2">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-23.2-115-65.1-157zM223.9 414.8c-32.9 0-65.1-8.8-93.3-25.5l-6.7-4-69.4 18.2 18.5-67.6-4.4-7c-18.3-29.2-28-62.9-28-97.7 0-101 82.2-183.1 183.3-183.1 53.9 0 104.5 21 142.6 59.2 38.1 38.1 59.1 88.8 59.1 142.7 0 101-82.2 183.1-183.1 183.1zm100.6-137.5c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+                <div class="flex flex-col leading-none text-left">
+                    <span>CONTÁCTENOS</span>
+                    <span class="font-normal text-xs mt-1 opacity-90">933 128 377</span>
+                </div>
+            </a>
+        </div>
+    </nav>
+
+
+    <!-- CONTENEDOR PRINCIPAL DINÁMICO (AQUÍ OCURREN LAS TRANSICIONES) -->
+    <main class="relative w-full">
+
+        <!-- =========================================================
+             VISTA 1: PORTADA PRINCIPAL (HOME)
+             ========================================================= -->
+        <div id="view-home" class="transition-all duration-500 ease-in-out opacity-100 translate-y-0 relative w-full">
+            
+            <div class="relative w-full min-h-[90vh] lg:min-h-0 lg:h-[800px] bg-[#0A1A12] overflow-hidden flex items-center justify-center py-12 lg:py-0">
+                
+                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-luminosity"
+                     style="background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1920&q=80');">
+                </div>
+                
+                <i data-lucide="leaf" class="absolute -top-10 -left-10 text-[#A3D95D] w-64 h-64 opacity-20 -rotate-45 blur-sm hidden lg:block"></i>
+                <i data-lucide="leaf" class="absolute bottom-10 -right-20 text-[#A3D95D] w-96 h-96 opacity-10 rotate-45 blur-md"></i>
+
+                <div class="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 h-full flex flex-col lg:flex-row items-center justify-between">
+                    
+                    <div class="w-full lg:w-[50%] flex flex-col items-center lg:items-start -mt-4 lg:-mt-16">
+                        
+                        <div class="flex flex-col items-center lg:items-start w-full lg:w-fit mt-8 lg:mt-0">
+                            
+                            <div class="flex flex-col items-center w-[90%] sm:w-[80%] lg:w-fit lg:ml-6 mb-2 lg:mb-1">
+                                <h2 class="text-white text-2xl md:text-3xl lg:text-4xl font-serif font-bold tracking-widest mb-2 animate-fade-in-up delay-200 text-center">
+                                    JOVENES UNIDOS
+                                </h2>
+                                
+                                <div class="flex items-center gap-2 md:gap-4 mb-2 w-full animate-fade-in-up delay-300">
+                                    <div class="h-[2px] bg-[#A3D95D] flex-grow"></div>
+                                    <span class="text-white text-xl md:text-3xl lg:text-4xl font-serif font-bold tracking-widest whitespace-nowrap">POR UN</span>
+                                    <div class="h-[2px] bg-[#A3D95D] flex-grow"></div>
+                                </div>
+                            </div>
+
+                            <h1 class="text-[#A3D95D] text-[15vw] sm:text-7xl lg:text-7xl xl:text-[85px] font-serif font-black leading-none drop-shadow-[0_4px_4px_rgba(0,0,0,0.6)] animate-fade-in-up delay-400 text-center lg:text-left w-full">
+                                FUTURO
+                            </h1>
+                            
+                            <h1 class="text-[#A3D95D] text-[13vw] sm:text-7xl lg:text-7xl xl:text-[85px] font-serif font-black leading-none drop-shadow-[0_4px_4px_rgba(0,0,0,0.6)] animate-fade-in-up delay-450 text-center lg:text-left w-full mt-1 lg:mt-0">
+                                SOSTENIBLE
+                            </h1>
+
+                            <p class="text-gray-200 text-xl md:text-2xl lg:text-[28px] font-serif italic w-full text-center lg:text-left leading-snug animate-fade-in-up delay-500 mt-5 lg:mt-6 lg:pl-1 max-w-xl px-4 lg:px-0">
+                                Creamos conciencia, generamos acción y cuidamos nuestro planeta
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="hidden lg:flex w-[45%] h-full items-center justify-end relative animate-fade-in-right delay-300">
+                        <!-- Contenedor hecho mucho más ancho y desplazado a la derecha para mostrar a todos -->
+                        <div class="w-[160%] xl:w-[175%] h-[75%] relative z-20 border-[8px] border-transparent -mr-20 xl:-mr-32">
+                            <div class="w-full h-full overflow-hidden shadow-2xl relative" style="border-radius: 30px 100px 30px 100px;">
+                                <img 
+                                    src="grupal 2.0.png"
+                                    alt="" 
+                                    class="w-full h-full object-cover object-center hover:scale-105 transition duration-700"
+                                />
+                                <div class="absolute inset-0 bg-[#0B3D1D]/10 mix-blend-color"></div>
+                            </div>
+                            <div class="absolute top-4 right-4 w-12 h-12 bg-[#1A1A1A] rounded-full flex items-center justify-center text-white cursor-pointer hover:bg-gray-800 border border-gray-700 transition z-30">
+                                <i data-lucide="x" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- EL TEXTO GRIS INFERIOR FUE BORRADO COMPLETAMENTE -->
+        </div>
+
+
+        <!-- =========================================================
+             VISTA 2: SOBRE NOSOTROS (QUIENES SOMOS)
+             ========================================================= -->
+        <div id="view-about" class="hidden transition-all duration-500 ease-in-out opacity-0 translate-y-10 relative w-full h-[800px] lg:h-[900px] bg-[#0A1A12] flex items-center justify-center overflow-hidden">
+            
+            <button onclick="goToHome(event)" class="absolute top-8 left-6 lg:left-12 z-50 bg-[#8c6b4a] hover:bg-[#684d33] text-white px-5 py-2.5 rounded-full font-bold flex items-center gap-2 shadow-lg transition-colors border border-[#5c442c]">
+                <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                VOLVER AL INICIO
+            </button>
+
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
+                 style="background-image: url('https://images.unsplash.com/photo-1536882240095-0379873feb4e?auto=format&fit=crop&w=1920&q=80');">
+            </div>
+            <div class="absolute inset-0 bg-black/40"></div>
+
+            <div class="relative z-10 w-[90%] max-w-[550px] bg-[#94714A] rounded-sm p-12 lg:p-16 flex flex-col items-center justify-center shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)] border-[3px] border-[#6b4e31]" 
+                 style="background-image: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.1) 100%);">
+                
+                <div class="flex items-center gap-2 mb-2 text-[#A8C5C3] opacity-80">
+                    <div class="w-10 h-0.5 bg-[#A8C5C3]"></div>
+                    <i data-lucide="leaf" class="w-4 h-4"></i>
+                    <i data-lucide="leaf" class="w-5 h-5 rotate-45"></i>
+                    <i data-lucide="leaf" class="w-4 h-4 -rotate-45"></i>
+                    <div class="w-10 h-0.5 bg-[#A8C5C3]"></div>
+                </div>
+
+                <h2 class="text-4xl md:text-[52px] font-serif font-black tracking-wider text-center text-outline-wood mb-2 leading-none">
+                    SOBRE NOSOTROS
+                </h2>
+
+                <div class="flex items-center gap-2 mb-10 text-[#A8C5C3] opacity-80">
+                    <div class="w-10 h-0.5 bg-[#A8C5C3]"></div>
+                    <i data-lucide="leaf" class="w-5 h-5 rotate-180"></i>
+                    <div class="w-10 h-0.5 bg-[#A8C5C3]"></div>
+                </div>
+
+                <p class="text-center text-[#A8C5C3] text-xl md:text-2xl font-medium leading-relaxed drop-shadow-sm px-2">
+                    Somos estudiantes de diferentes carreras unidos por el amor a la naturaleza el deseo de generar cambios positivos en nuestra comunidad.
+                </p>
+
+                <div class="absolute -left-8 md:-left-12 bottom-12 w-32 md:w-36 bg-[#C4A47C] rounded-sm p-3 flex items-center justify-center gap-2 shadow-xl -rotate-[15deg] border border-[#a18460]">
+                    <div class="absolute -left-3 top-1/2 w-6 h-6 border-t-2 border-r-2 border-[#d1ccc0] rounded-tr-full -translate-y-1/2 z-0"></div>
+                    <div class="w-2 h-2 rounded-full bg-black/80 absolute left-2 top-1/2 -translate-y-1/2 z-10 shadow-inner"></div>
+                    
+                    <div class="ml-4 flex items-center gap-2">
+                        <i data-lucide="leaf" class="text-[#0B3D1D] w-6 h-6"></i>
+                        <span class="text-[#0B3D1D] font-black text-xl tracking-widest">RUA</span>
+                    </div>
+                </div>
+
+                <button class="absolute -bottom-7 left-1/2 -translate-x-1/2 bg-[#3A2415] hover:bg-[#25160c] text-white px-8 py-3.5 rounded-full flex items-center gap-3 border-[3px] border-[#5e4129] shadow-[0_10px_20px_rgba(0,0,0,0.5)] transition-all transform hover:scale-105">
+                    <i data-lucide="leaf" class="w-5 h-5 text-gray-400"></i>
+                    <span class="font-bold tracking-widest text-[#E5E0D8] text-sm md:text-base">CONOCENOS MÁS</span>
+                    <i data-lucide="move-right" class="w-6 h-6 text-[#A8C5C3]"></i>
+                </button>
+            </div>
+        </div>
+
+
+        <!-- =========================================================
+             VISTA 3: MISIÓN
+             ========================================================= -->
+        <div id="view-mission" class="hidden transition-all duration-500 ease-in-out opacity-0 translate-y-10 relative w-full h-[800px] lg:h-[900px] bg-[#0A1A12] flex flex-col overflow-hidden">
+            
+            <button onclick="goToHome(event)" class="absolute top-8 left-6 lg:left-12 z-50 bg-[#8c6b4a] hover:bg-[#684d33] text-white px-5 py-2.5 rounded-full font-bold flex items-center gap-2 shadow-lg transition-colors border border-[#5c442c]">
+                <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                VOLVER AL INICIO
+            </button>
+
+            <!-- BOTÓN SIGUIENTE (HACIA VISIÓN) -->
+            <button onclick="goToVision(event)" class="absolute top-1/2 right-4 lg:right-12 z-50 bg-white/10 hover:bg-[#A3D95D] text-white hover:text-[#041C0D] px-4 py-4 md:px-6 md:py-4 rounded-full font-bold flex flex-col md:flex-row items-center gap-2 shadow-xl backdrop-blur-md border border-white/30 transition-all group transform -translate-y-1/2">
+                <span class="text-xs md:text-sm tracking-widest hidden md:block">SIGUIENTE</span>
+                <i data-lucide="chevron-right" class="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-1 transition-transform"></i>
+            </button>
+
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
+                 style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1920&q=80');">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#041C0D]/95 via-[#041C0D]/60 to-transparent"></div>
+
+            <div class="absolute bottom-0 left-0 w-[100%] md:w-[70%] lg:w-[45%] h-[70%] bg-gradient-to-tr from-[#65a30d] to-[#22c55e] z-0 opacity-90" style="clip-path: polygon(0 0, 100% 100%, 0 100%);"></div>
+
+            <div class="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-12 h-full flex flex-col justify-between pt-32 pb-10">
+                <div class="max-w-2xl mt-8">
+                    <h1 class="text-white text-6xl md:text-[80px] font-serif font-black leading-none drop-shadow-[0_4px_4px_rgba(0,0,0,0.6)] mb-6 tracking-wide uppercase">
+                        MISIÓN
+                    </h1>
+                    <p class="text-white text-lg md:text-[22px] font-medium leading-relaxed drop-shadow-md text-justify md:text-left pr-4">
+                        Promover la participación de la comunidad universitaria UNAS en la gestión ambiental y el desarrollo sostenible, bajo un enfoque multidisciplinario, nuestra labor se centra en fomentar la sensibilización ambiental, la investigación aplicada, la extensión universitaria y la formulación de proyectos que contribuyan a la solución de las problemáticas socioambientales de la Selva.
+                    </p>
+                </div>
+
+                <div class="flex justify-between items-end w-full mt-auto pr-16 md:pr-24">
+                    <div class="flex items-center gap-2 md:gap-4 mb-4">
+                        <img src="LOGO 1.png" alt="" class="w-24 md:w-36 object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,0.4)]">
+                        <span class="text-[#A3D95D] text-4xl md:text-[65px] font-black tracking-widest drop-shadow-lg opacity-90" style="background: linear-gradient(to bottom, #d9f99d, #86efac); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">RUA</span>
+                    </div>
+
+                    <div class="text-right text-white flex items-center justify-end gap-3 md:gap-5 mb-4">
+                        <div class="flex flex-col text-xs md:text-[20px] font-bold tracking-widest leading-tight text-white drop-shadow-md">
+                            <span class="mb-1 text-sm md:text-[24px]">PERÚ</span>
+                            <span>NODO UNAS - TINGO</span>
+                            <span>MARÍA</span>
+                        </div>
+                        <div class="w-[2px] h-12 md:h-20 bg-white shadow-md"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =========================================================
+             VISTA 4: VISIÓN
+             ========================================================= -->
+        <div id="view-vision" class="hidden transition-all duration-500 ease-in-out opacity-0 translate-y-10 relative w-full h-[800px] lg:h-[900px] bg-[#0A1A12] flex flex-col items-center justify-center overflow-hidden">
+            
+            <div class="absolute top-8 left-6 lg:left-12 z-50 flex gap-4">
+                <button onclick="goToHome(event)" class="bg-black/40 hover:bg-black/60 text-white px-5 py-2.5 rounded-full font-bold flex items-center gap-2 shadow-lg transition-colors border border-white/20 backdrop-blur-sm">
+                    <i data-lucide="home" class="w-5 h-5"></i>
+                    <span class="hidden md:inline">INICIO</span>
+                </button>
+                <button onclick="goToMission(event)" class="bg-[#8c6b4a] hover:bg-[#684d33] text-white px-5 py-2.5 rounded-full font-bold flex items-center gap-2 shadow-lg transition-colors border border-[#5c442c]">
+                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    VOLVER A MISIÓN
+                </button>
+            </div>
+
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+                 style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80');">
+            </div>
+            
+            <div class="absolute bottom-0 left-0 w-[100%] md:w-[60%] lg:w-[45%] h-[60%] bg-gradient-to-tr from-[#0a2e16] to-transparent z-0 opacity-80" style="clip-path: polygon(0 0, 0 100%, 100% 100%);"></div>
+
+            <div class="relative z-10 w-[90%] max-w-[900px] bg-[#8bc34a] rounded-[40px] px-8 py-10 md:p-12 shadow-2xl m-auto border-b-8 border-r-8 border-[#558b2f]">
+                
+                <div class="absolute -top-6 md:-top-8 left-1/2 -translate-x-1/2 bg-[#8bc34a] px-8 md:px-12 py-2 rounded-t-[40px] flex items-center justify-center">
+                    <h2 class="text-white text-5xl md:text-7xl font-serif font-black leading-none drop-shadow-[0_4px_4px_rgba(0,0,0,0.6)] flex items-center gap-3 tracking-wide uppercase">
+                        VISIÓN
+                    </h2>
+                </div>
+                
+                <p class="text-white text-lg md:text-[22px] font-medium leading-relaxed text-justify mt-8 md:mt-4 drop-shadow-sm">
+                    Ser el nodo referente y articulador de la gestión ambiental al interior de la UNAS, reconocido por su liderazgo, capacidad de incidencia y contribución activa al desarrollo sostenible de la Amazonía Peruana. Aspiramos a ser un puente entre la universidad, la sociedad y la RUA Perú, destacándonos por nuestra acción multidisciplinaria y protagónica en la solución de problemáticas ambientales regionales.
+                </p>
+            </div>
+
+            <div class="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-12 mt-auto mb-10 flex flex-col md:flex-row justify-between items-end md:items-end h-[150px]">
+                
+                <div class="flex items-center gap-2 md:gap-4 z-20 order-2 md:order-1 mt-6 md:mt-0 self-start md:self-auto">
+                    <img src="LOGO 1.png" alt="" class="w-24 md:w-36 object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,0.4)]">
+                    <span class="text-white/80 text-5xl md:text-[65px] font-black tracking-widest drop-shadow-lg opacity-90">RUA</span>
+                </div>
+                
+                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center w-full z-10 order-1 md:order-2">
+                    <h3 class="text-white text-2xl md:text-3xl font-serif tracking-widest mb-3 drop-shadow-md">NODO UNAS - TINGO MARÍA</h3>
+                    <div class="flex items-center gap-2 w-[80%] max-w-[400px]">
+                        <div class="h-[2px] bg-[#A3D95D] flex-grow"></div>
+                        <i data-lucide="leaf" class="text-[#A3D95D] w-6 h-6"></i>
+                        <div class="h-[2px] bg-[#A3D95D] flex-grow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- =========================================================
+             VISTA 5: NUESTRA HISTORIA
+             ========================================================= -->
+        <div id="view-history" class="hidden transition-all duration-500 ease-in-out opacity-0 translate-y-10 relative w-full min-h-[800px] lg:h-[900px] bg-[#fcfcfc] flex items-center justify-center overflow-hidden" style="background-image: repeating-linear-gradient(to right, transparent, transparent 40px, rgba(0,0,0,0.01) 40px, rgba(0,0,0,0.01) 80px);">
+            
+            <div class="absolute top-8 left-6 lg:left-12 z-50 flex gap-4">
+                <button onclick="goToHome(event)" class="bg-white hover:bg-gray-100 text-[#3b5e2b] px-5 py-2.5 rounded-full font-bold flex items-center gap-2 shadow-md transition-colors border border-gray-200">
+                    <i data-lucide="home" class="w-5 h-5"></i>
+                    <span class="hidden md:inline">INICIO</span>
+                </button>
+                <button onclick="goToVision(event)" class="bg-[#4a6b38] hover:bg-[#344d27] text-white px-5 py-2.5 rounded-full font-bold flex items-center gap-2 shadow-md transition-colors">
+                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    VOLVER A VISIÓN
+                </button>
+            </div>
+
+            <div class="w-full h-full flex flex-col lg:flex-row pt-24 lg:pt-0 max-w-[1400px] mx-auto">
+                
+                <div class="w-full lg:w-[55%] h-full flex flex-col justify-center px-8 md:px-16 lg:px-24 z-10 pb-8 lg:pb-0">
+                    
+                    <h1 class="text-[#55773d] text-6xl md:text-[80px] lg:text-[95px] font-serif font-black leading-[0.9] tracking-tight drop-shadow-[0_4px_4px_rgba(0,0,0,0.2)]">
+                        NUESTRA
+                    </h1>
+                    <h1 class="text-[#fbbc42] text-6xl md:text-[80px] lg:text-[95px] font-serif font-black leading-[0.9] mb-8 tracking-tight drop-shadow-[0_4px_4px_rgba(0,0,0,0.2)]">
+                        HISTORIA
+                    </h1>
+
+                    <div class="space-y-5 text-[#4a633f] text-base md:text-[17px] font-medium leading-relaxed text-justify max-w-[650px]">
+                        <p>
+                            La RUA fue creada en noviembre del 2001 por la Asociación Civil Unidos por el Desarrollo Sostenible Ambiental - UNIDESA, la cual fue formada por un grupo de estudiantes de la Facultad de Ingeniería Ambiental de la Universidad Nacional de Ingeniería (UNI), que interpretando el papel de la universidad peruana como un espacio de análisis, debate, diagnostico y propuestas de solución a los problemas ambientales.
+                        </p>
+                        <p>
+                            se organizaron y convocaron al "Primer Encuentro Nacional Universidad y Medio Ambiente" (I ENUMA) en Noviembre del 2001, evento que por primer a vez reunía a mas de diez universidades a nivel nacional que abordaron exclusivamente temas relacionados al medio ambiente y a la elaboración de estrategias para un desarrollo sostenible, planteando soluciones para concretarlas en proyectos. Actualmente son Coadministradores de la Red.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-[45%] h-[500px] lg:h-full relative flex flex-col items-center justify-end pb-[5vh] lg:pb-[10vh] bg-transparent">
+                    <div class="relative w-[300px] lg:w-[420px] h-[350px] lg:h-[480px] z-10 flex justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=600&q=80" alt="" class="w-full h-full object-cover object-bottom" style="clip-path: ellipse(80% 100% at 50% 100%);">
+                    </div>
+
+                    <div class="relative z-20 w-[320px] lg:w-[420px] h-[180px] lg:h-[220px] bg-gradient-to-b from-[#f0f4f8] to-[#d9e2ec] rounded-b-[60px] lg:rounded-b-[80px] shadow-2xl flex items-center justify-center -mt-[60px] lg:-mt-[80px] border-t-8 border-white">
+                        <div class="flex items-center gap-3 lg:gap-5 mt-2">
+                            <img src="LOGO 1.png" alt="" class="w-16 lg:w-24 object-contain">
+                            <span class="text-[#3b5e2b] text-[40px] lg:text-[65px] font-black tracking-widest drop-shadow-sm">RUA</span>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 flex justify-center w-[220px] lg:w-[280px] h-[70px] lg:h-[90px] -mt-4">
+                        <div class="absolute left-2 lg:left-4 top-0 w-1.5 lg:w-2 h-full bg-[#1e293b] transform rotate-[15deg] rounded-b-sm shadow-xl origin-top"></div>
+                        <div class="absolute left-16 lg:left-20 top-0 w-1 lg:w-1.5 h-full bg-[#1e293b] transform rotate-[5deg] rounded-b-sm shadow-xl origin-top"></div>
+                        <div class="absolute right-16 lg:right-20 top-0 w-1 lg:w-1.5 h-full bg-[#1e293b] transform -rotate-[5deg] rounded-b-sm shadow-xl origin-top"></div>
+                        <div class="absolute right-2 lg:right-4 top-0 w-1.5 lg:w-2 h-full bg-[#1e293b] transform -rotate-[15deg] rounded-b-sm shadow-xl origin-top"></div>
+                        <div class="absolute bottom-2 w-[240px] lg:w-[300px] h-6 border-b-[5px] lg:border-b-[6px] border-[#1e293b] rounded-[50%] z-20"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- =========================================================
+             VISTA 5.5: PRINCIPIOS (NUEVA PANTALLA CREADA)
+             ========================================================= -->
+        <div id="view-principles" class="hidden transition-all duration-500 ease-in-out opacity-0 translate-y-10 relative w-full min-h-screen flex flex-col md:flex-row overflow-hidden bg-[#b9f061]">
+
+            <!-- Botón Top Left -->
+            <div class="absolute top-6 left-6 lg:left-12 z-50 flex gap-4">
+                <button onclick="goToHome(event)" class="bg-white hover:bg-gray-100 text-[#3b5e2b] px-4 py-2.5 rounded-full font-bold flex items-center justify-center shadow-md transition-colors border border-gray-200">
+                    <i data-lucide="home" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Imagen Izquierda (Planta nueva) -->
+            <div class="w-full md:w-[35%] h-[35vh] md:h-screen border-b-4 md:border-b-0 md:border-r-[6px] border-white shadow-2xl z-10 relative overflow-hidden">
+                <img src="PLANTA 2.0.png" alt="" class="w-full h-full object-cover">
+                <!-- Capa de degradado para que la planta se mezcle mejor con el borde blanco -->
+                <div class="absolute inset-0 bg-gradient-to-t from-transparent to-white/20 mix-blend-overlay"></div>
+            </div>
+
+            <!-- Contenido Derecha (Fondo verde limón y recuadros) -->
+            <div class="w-full md:w-[65%] min-h-[65vh] md:h-screen flex flex-col justify-center items-center p-8 md:p-16 relative z-0" style="background: linear-gradient(135deg, #cff47e 0%, #9be24a 100%);">
+                
+                <div class="w-full max-w-[650px] flex flex-col">
+                    <!-- Título -->
+                    <h1 class="text-[#3c3722] text-5xl md:text-[80px] font-serif font-black tracking-widest uppercase mb-10 text-center drop-shadow-sm">
+                        PRINCIPIOS
+                    </h1>
+
+                    <!-- Lista de Principios -->
+                    <div class="flex flex-col gap-5">
+                        
+                        <!-- Principio 01 -->
+                        <div class="flex items-center gap-6 bg-[#e6facf] rounded-full p-2 pr-8 shadow-md transform transition hover:-translate-y-1 hover:shadow-lg border border-white/40">
+                            <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center font-black text-[22px] text-[#2c5b20] shadow-sm shrink-0">01</div>
+                            <span class="text-[#193315] text-xl lg:text-2xl font-bold tracking-wide">Democracia interna</span>
+                        </div>
+
+                        <!-- Principio 02 -->
+                        <div class="flex items-center gap-6 bg-[#e6facf] rounded-full p-2 pr-8 shadow-md transform transition hover:-translate-y-1 hover:shadow-lg border border-white/40">
+                            <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center font-black text-[22px] text-[#2c5b20] shadow-sm shrink-0">02</div>
+                            <span class="text-[#193315] text-xl lg:text-2xl font-bold tracking-wide">Inclusión</span>
+                        </div>
+
+                        <!-- Principio 03 -->
+                        <div class="flex items-center gap-6 bg-[#e6facf] rounded-full p-2 pr-8 shadow-md transform transition hover:-translate-y-1 hover:shadow-lg border border-white/40">
+                            <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center font-black text-[22px] text-[#2c5b20] shadow-sm shrink-0">03</div>
+                            <span class="text-[#193315] text-xl lg:text-2xl font-bold tracking-wide">Multidisciplinariedad</span>
+                        </div>
+
+                        <!-- Principio 04 -->
+                        <div class="flex items-center gap-6 bg-[#e6facf] rounded-full p-2 pr-8 shadow-md transform transition hover:-translate-y-1 hover:shadow-lg border border-white/40">
+                            <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center font-black text-[22px] text-[#2c5b20] shadow-sm shrink-0">04</div>
+                            <span class="text-[#193315] text-xl lg:text-2xl font-bold tracking-wide">Sostenibilidad</span>
+                        </div>
+
+                        <!-- Principio 05 -->
+                        <div class="flex items-center gap-6 bg-[#e6facf] rounded-full p-2 pr-8 shadow-md transform transition hover:-translate-y-1 hover:shadow-lg border border-white/40">
+                            <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center font-black text-[22px] text-[#2c5b20] shadow-sm shrink-0">05</div>
+                            <span class="text-[#193315] text-xl lg:text-2xl font-bold tracking-wide">Transparencia</span>
+                        </div>
+
+                        <!-- Principio 06 -->
+                        <div class="flex items-center gap-6 bg-[#e6facf] rounded-full p-2 pr-8 shadow-md transform transition hover:-translate-y-1 hover:shadow-lg border border-white/40">
+                            <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center font-black text-[22px] text-[#2c5b20] shadow-sm shrink-0">06</div>
+                            <span class="text-[#193315] text-xl lg:text-2xl font-bold tracking-wide">Compromiso ambiental</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- =========================================================
+             VISTA 6: ACTIVIDADES
+             ========================================================= -->
+        <div id="view-activities" class="hidden transition-all duration-500 ease-in-out opacity-0 translate-y-10 relative w-full min-h-screen bg-[#f8fbff] flex flex-col overflow-hidden pb-16" style="background-image: radial-gradient(#dbeafe 2px, transparent 2px); background-size: 30px 30px;">
+            
+            <div class="absolute top-6 left-6 lg:left-12 z-50 flex gap-4">
+                <button onclick="goToHome(event)" class="bg-white hover:bg-gray-100 text-[#3b5e2b] px-4 py-2.5 rounded-full font-bold flex items-center justify-center shadow-md transition-colors border border-gray-200">
+                    <i data-lucide="home" class="w-5 h-5"></i>
+                </button>
+                <!-- AÑADIDO: Botón para volver a "Súmate a Nuestra Causa" (la pantalla anterior) -->
+                <button onclick="goToJoin(event)" class="bg-[#4a6b38] hover:bg-[#344d27] text-white px-5 py-2.5 rounded-full font-bold flex items-center gap-2 shadow-md transition-colors">
+                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    VOLVER
+                </button>
+            </div>
+
+            <!-- CAMBIADO: Botón Siguiente ahora lleva al Calendario 1 -->
+            <button onclick="goToCalendar(event)" class="absolute top-1/2 right-4 lg:right-8 z-50 bg-[#8bc34a] hover:bg-[#689f38] text-white px-4 py-4 md:px-6 md:py-4 rounded-full font-bold flex flex-col md:flex-row items-center gap-2 shadow-xl transition-all group transform -translate-y-1/2 border-2 border-white">
+                <span class="text-xs md:text-sm tracking-widest hidden md:block">SIGUIENTE</span>
+                <i data-lucide="chevron-right" class="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-1 transition-transform"></i>
+            </button>
+
+            <div class="w-full max-w-[1400px] mx-auto px-6 lg:px-12 pt-20 md:pt-16 flex flex-col md:flex-row justify-between items-center z-10 gap-6 md:gap-0">
+                <div class="flex items-center gap-3">
+                    <img src="LOGO 1.png" alt="" class="w-20 lg:w-28 object-contain">
+                    <div class="flex flex-col">
+                        <span class="text-[#2b6a32] text-2xl lg:text-3xl font-black tracking-widest leading-none">RUA</span>
+                        <div class="w-full h-[1px] bg-[#2b6a32] my-0.5"></div>
+                        <span class="text-[#2b6a32] text-[10px] lg:text-xs font-bold tracking-widest text-center">PERÚ</span>
+                        <span class="text-gray-500 text-[8px] lg:text-[9px] font-bold text-center uppercase">NODO UNAS - TINGO MARÍA</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center justify-center text-center px-4">
+                    <h1 class="text-[#1a365d] text-3xl md:text-4xl lg:text-5xl font-black mb-3">Actividades del semestre 2026-I</h1>
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="h-[2px] w-12 md:w-20 bg-[#65a30d]"></div>
+                        <i data-lucide="leaf" class="text-[#65a30d] w-5 h-5"></i>
+                        <div class="h-[2px] w-12 md:w-20 bg-[#65a30d]"></div>
+                    </div>
+                    <h2 class="text-[#4d7c0f] text-xl md:text-2xl font-semibold italic">Sensibilización y participación</h2>
+                </div>
+
+                <div class="flex-shrink-0">
+                    <img src="UNAS.png" alt="" class="w-24 lg:w-32 object-contain">
+                </div>
+            </div>
+
+            <div class="w-full max-w-[1300px] mx-auto px-6 lg:px-12 mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 z-10">
+                
+                <div class="bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="bg-[#2f7a31] text-white text-center py-4 text-xl lg:text-2xl font-bold tracking-wide">
+                        DIFUSIÓN Y EDUCACIÓN
+                    </div>
+                    <div class="w-full h-[220px] lg:h-[260px] overflow-hidden bg-gray-50">
+                        <img src="LOGO%202.0.png" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 md:p-8 flex flex-col gap-2">
+                        <div class="flex items-center gap-5 py-4 border-b border-gray-200">
+                            <div class="w-14 h-14 rounded-full bg-[#2f7a31] text-white flex items-center justify-center shrink-0 shadow-md">
+                                <i data-lucide="mic" class="w-7 h-7"></i>
+                            </div>
+                            <span class="text-lg lg:text-xl font-bold text-gray-800 leading-tight">Participación en entrevista del Círculo de Periodismo de Contabilidad</span>
+                        </div>
+                        <div class="flex items-center gap-5 py-4 border-b border-gray-200">
+                            <div class="w-14 h-14 rounded-full bg-[#2f7a31] text-white flex items-center justify-center shrink-0 shadow-md">
+                                <i data-lucide="droplet" class="w-7 h-7"></i>
+                            </div>
+                            <span class="text-lg lg:text-xl font-bold text-gray-800 leading-tight">Mini campaña temática:<br>Uso responsable del agua</span>
+                        </div>
+                        <div class="flex items-center gap-5 py-4 border-b border-gray-200">
+                            <div class="w-14 h-14 rounded-full bg-[#2f7a31] text-white flex items-center justify-center shrink-0 shadow-md">
+                                <i data-lucide="file-text" class="w-7 h-7"></i>
+                            </div>
+                            <span class="text-lg lg:text-xl font-bold text-gray-800 leading-tight">Publicación de un<br>afiche informativo</span>
+                        </div>
+                        <div class="flex items-center gap-5 py-4">
+                            <div class="w-14 h-14 rounded-full bg-[#2f7a31] text-white flex items-center justify-center shrink-0 shadow-md">
+                                <i data-lucide="clapperboard" class="w-7 h-7"></i>
+                            </div>
+                            <span class="text-lg lg:text-xl font-bold text-gray-800 leading-tight">Cine ambiental</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="bg-[#388e3c] text-white text-center py-4 text-xl lg:text-2xl font-bold tracking-wide">
+                        ACCIÓN Y COMUNIDAD
+                    </div>
+                    <div class="w-full h-[220px] lg:h-[260px] overflow-hidden flex bg-gray-50">
+                        <img src="LOGO 2.1.png" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 md:p-8 flex flex-col gap-2 flex-grow">
+                        <div class="flex items-center gap-5 py-5 border-b border-gray-200 mt-2">
+                            <div class="w-14 h-14 rounded-full bg-[#388e3c] text-white flex items-center justify-center shrink-0 shadow-md">
+                                <i data-lucide="hand-heart" class="w-7 h-7"></i>
+                            </div>
+                            <span class="text-lg lg:text-xl font-bold text-gray-800 leading-tight">Limpieza de las áreas verdes de la UNAS</span>
+                        </div>
+                        <div class="flex items-center gap-5 py-5 border-b border-gray-200 mt-4">
+                            <div class="w-14 h-14 rounded-full bg-[#388e3c] text-white flex items-center justify-center shrink-0 shadow-md">
+                                <i data-lucide="footprints" class="w-7 h-7"></i>
+                            </div>
+                            <span class="text-lg lg:text-xl font-bold text-gray-800 leading-tight">Caminata por el BRUNAS</span>
+                        </div>
+                        <div class="flex items-center gap-5 py-5 mt-4">
+                            <div class="w-14 h-14 rounded-full bg-[#388e3c] text-white flex items-center justify-center shrink-0 shadow-md">
+                                <i data-lucide="dribbble" class="w-7 h-7"></i>
+                            </div>
+                            <span class="text-lg lg:text-xl font-bold text-gray-800 leading-tight">Actividad deportiva</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- =========================================================
+             VISTA 7: CALENDARIO AMBIENTAL
+             ========================================================= -->
+        <div id="view-calendar" class="hidden transition-all duration-500 ease-in-out opacity-0 translate-y-10 relative w-full min-h-screen bg-[#f8fbff] flex flex-col overflow-hidden pb-16" style="background-image: radial-gradient(#dbeafe 2px, transparent 2px); background-size: 30px 30px;">
+            
+            <div class="absolute top-6 left-6 lg:left-12 z-50 flex gap-4">
+                <button onclick="goToHome(event)" class="bg-white hover:bg-gray-100 text-[#3b5e2b] px-4 py-2.5 rounded-full font-bold flex items-center justify-center shadow-md transition-colors border border-gray-200">
+                    <i data-lucide="home" class="w-5 h-5"></i>
+                </button>
+                <!-- CAMBIADO: Botón Volver ahora regresa a Actividades -->
+                <button onclick="goToActivities(event)" class="bg-[#4a6b38] hover:bg-[#344d27] text-white px-5 py-2.5 rounded-full font-bold flex items-center gap-2 shadow-md transition-colors">
+                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    VOLVER A ACTIVIDADES
+                </button>
+            </div>
+
+            <button onclick="goToCalendar2(event)" class="absolute top-1/2 right-4 lg:right-8 z-50 bg-[#8bc34a] hover:bg-[#689f38] text-white px-4 py-4 md:px-6 md:py-4 rounded-full font-bold flex flex-col md:flex-row items-center gap-2 shadow-xl transition-all group transform -translate-y-1/2 border-2 border-white">
+                <span class="text-xs md:text-sm tracking-widest hidden md:block">SIGUIENTE</span>
+                <i data-lucide="chevron-right" class="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-1 transition-transform"></i>
+            </button>
+
+            <div class="w-full max-w-[1400px] mx-auto px-6 lg:px-12 pt-24 md:pt-16 flex flex-col md:flex-row justify-between items-center z-10 gap-6 md:gap-0">
+                <div class="flex items-center gap-3">
+                    <img src="LOGO 1.png" alt="" class="w-20 lg:w-28 object-contain">
+                    <div class="flex flex-col">
+                        <span class="text-[#2b6a32] text-2xl lg:text-3xl font-black tracking-widest leading-none">RUA</span>
+                        <div class="w-full h-[1px] bg-[#2b6a32] my-0.5"></div>
+                        <span class="text-[#2b6a32] text-[10px] lg:text-xs font-bold tracking-widest text-center">PERÚ</span>
+                        <span class="text-gray-500 text-[8px] lg:text-[9px] font-bold text-center uppercase">NODO UNAS - TINGO MARÍA</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center justify-center text-center px-4">
+                    <h1 class="text-[#1a365d] text-3xl md:text-4xl lg:text-5xl font-black mb-3 tracking-wide">Calendario ambiental 2026-I</h1>
+                    <div class="flex items-center gap-2 mb-3 mt-2">
+                        <div class="h-[2px] w-16 md:w-28 bg-[#65a30d]"></div>
+                        <i data-lucide="leaf" class="text-[#65a30d] w-6 h-6"></i>
+                        <div class="h-[2px] w-16 md:w-28 bg-[#65a30d]"></div>
+                    </div>
+                    <h2 class="text-[#4d7c0f] text-xl md:text-2xl font-semibold italic">Pequeñas acciones, gran impacto</h2>
+                </div>
+
+                <div class="flex-shrink-0">
+                    <img src="UNAS.png" alt="" class="w-24 lg:w-32 object-contain">
+                </div>
+            </div>
+
+            <div class="w-full max-w-[1200px] mx-auto px-6 lg:px-12 mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 z-10">
+                
+                <!-- ABRIL -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 flex flex-col md:flex-row min-h-[350px]">
+                    <div class="w-full md:w-[45%] flex flex-col">
+                        <div class="bg-[#558b2f] text-white text-center py-3 text-2xl lg:text-3xl font-black tracking-widest uppercase">
+                            ABRIL
+                        </div>
+                        <img src="PLANETA 1.png" alt="" class="w-full h-full object-cover min-h-[200px]">
+                    </div>
+                    <div class="w-full md:w-[55%] p-6 flex flex-col justify-center gap-5">
+                        <div class="flex items-center gap-4 border-b border-gray-100 pb-4">
+                            <div class="w-12 h-12 rounded-full bg-[#558b2f] text-white flex items-center justify-center shrink-0">
+                                <i data-lucide="heart-pulse" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex flex-col leading-tight">
+                                <span class="text-base lg:text-lg font-bold text-gray-800">Día Mundial de<br>la Salud</span>
+                                <span class="text-[#d97706] font-bold mt-1 text-sm lg:text-base">7 de abril</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 border-b border-gray-100 pb-4">
+                            <div class="w-12 h-12 rounded-full bg-[#558b2f] text-white flex items-center justify-center shrink-0">
+                                <i data-lucide="globe" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex flex-col leading-tight">
+                                <span class="text-base lg:text-lg font-bold text-gray-800">Día de la Tierra</span>
+                                <span class="text-[#d97706] font-bold mt-1 text-sm lg:text-base">22 de abril</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-[#558b2f] text-white flex items-center justify-center shrink-0">
+                                <i data-lucide="sprout" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex flex-col leading-tight">
+                                <span class="text-base lg:text-lg font-bold text-gray-800">Día Internacional<br>de la Madre Tierra</span>
+                                <span class="text-[#d97706] font-bold mt-1 text-sm lg:text-base">22 de abril</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MAYO -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 flex flex-col md:flex-row min-h-[350px]">
+                    <div class="w-full md:w-[45%] flex flex-col">
+                        <div class="bg-[#558b2f] text-white text-center py-3 text-2xl lg:text-3xl font-black tracking-widest uppercase">
+                            MAYO
+                        </div>
+                        <img src="ABEJA 1.png" alt="[Image of Conservacion y Biodiversidad]" class="w-full h-full object-cover min-h-[200px]">
+                    </div>
+                    <div class="w-full md:w-[55%] p-6 flex flex-col justify-center gap-5">
+                        <div class="flex items-center gap-4 border-b border-gray-100 pb-4">
+                            <div class="w-12 h-12 rounded-full bg-[#558b2f] text-white flex items-center justify-center shrink-0">
+                                <i data-lucide="paw-print" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex flex-col leading-tight">
+                                <span class="text-base lg:text-lg font-bold text-gray-800">Semana de la Conservación<br>del Mono Choro de Cola<br>Amarilla</span>
+                                <span class="text-[#d97706] font-bold mt-1 text-sm">Primera semana de mayo</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 border-b border-gray-100 pb-4">
+                            <div class="w-12 h-12 rounded-full bg-[#558b2f] text-white flex items-center justify-center shrink-0">
+                                <i data-lucide="recycle" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex flex-col leading-tight">
+                                <span class="text-base lg:text-lg font-bold text-gray-800">Día Mundial del Reciclaje</span>
+                                <span class="text-[#d97706] font-bold mt-1 text-sm lg:text-base">17 de mayo</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-[#558b2f] text-white flex items-center justify-center shrink-0">
+                                <i data-lucide="bug" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex flex-col leading-tight">
+                                <span class="text-base lg:text-lg font-bold text-gray-800">Día Mundial de las Abejas</span>
+                                <span class="text-[#d97706] font-bold mt-1 text-sm lg:text-base">20 de mayo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- =========================================================
+             VISTA 8: CALENDARIO AMBIENTAL 2 (JUNIO / JULIO)
+             ========================================================= -->
+        <div id="view-calendar-2" class="hidden transition-all duration-500 ease-in-out opacity-0 translate-y-10 relative w-full min-h-screen bg-[#f8fbff] flex flex-col overflow-hidden pb-16" style="background-image: radial-gradient(#dbeafe 2px, transparent 2px); background-size: 30px 30px;">
+            
+            <div class="absolute top-6 left-6 lg:left-12 z-50 flex gap-4">
+                <button onclick="goToHome(event)" class="bg-white hover:bg-gray-100 text-[#3b5e2b] px-4 py-2.5 rounded-full font-bold flex items-center justify-center shadow-md transition-colors border border-gray-200">
+                    <i data-lucide="home" class="w-5 h-5"></i>
+                </button>
+                <button onclick="goToCalendar(event)" class="bg-[#4a6b38] hover:bg-[#344d27] text-white px-5 py-2.5 rounded-full font-bold flex items-center gap-2 shadow-md transition-colors">
+                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    VOLVER AL CALENDARIO
+                </button>
+            </div>
+
+            <!-- ELIMINADO: Se borró el botón "Siguiente" porque esta es la última pantalla del recorrido -->
+
+            <div class="w-full max-w-[1400px] mx-auto px-6 lg:px-12 pt-24 md:pt-16 flex flex-col md:flex-row justify-between items-center z-10 gap-6 md:gap-0">
+                <div class="flex items-center gap-3">
+                    <img src="LOGO 1.png" alt="" class="w-20 lg:w-28 object-contain">
+                    <div class="flex flex-col">
+                        <span class="text-[#2b6a32] text-2xl lg:text-3xl font-black tracking-widest leading-none">RUA</span>
+                        <div class="w-full h-[1px] bg-[#2b6a32] my-0.5"></div>
+                        <span class="text-[#2b6a32] text-[10px] lg:text-xs font-bold tracking-widest text-center">PERÚ</span>
+                        <span class="text-gray-500 text-[8px] lg:text-[9px] font-bold text-center uppercase">NODO UNAS - TINGO MARÍA</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center justify-center text-center px-4">
+                    <h1 class="text-[#1a365d] text-3xl md:text-4xl lg:text-5xl font-black mb-3 tracking-wide">Calendario ambiental 2026-I</h1>
+                    <div class="flex items-center gap-2 mb-3 mt-2">
+                        <div class="h-[2px] w-16 md:w-28 bg-[#65a30d]"></div>
+                        <i data-lucide="leaf" class="text-[#65a30d] w-6 h-6"></i>
+                        <div class="h-[2px] w-16 md:w-28 bg-[#65a30d]"></div>
+                    </div>
+                    <h2 class="text-[#4d7c0f] text-xl md:text-2xl font-semibold italic">Pequeñas acciones, gran impacto</h2>
+                </div>
+
+                <div class="flex-shrink-0">
+                    <img src="UNAS.png" alt="" class="w-24 lg:w-32 object-contain">
+                </div>
+            </div>
+
+            <div class="w-full max-w-[1200px] mx-auto px-6 lg:px-12 mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 z-10">
+                
+                <!-- JUNIO -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 flex flex-col md:flex-row min-h-[350px]">
+                    <div class="w-full md:w-[45%] flex flex-col">
+                        <div class="bg-[#388e3c] text-white text-center py-3 text-2xl lg:text-3xl font-black tracking-widest uppercase">JUNIO</div>
+                        <img src="JUNIO.png" alt="" class="w-full h-full object-cover min-h-[200px]">
+                    </div>
+                    <div class="w-full md:w-[55%] p-6 flex flex-col justify-center gap-5">
+                        <div class="flex items-center gap-4 border-b border-gray-100 pb-4">
+                            <div class="w-12 h-12 rounded-full bg-[#388e3c] text-white flex items-center justify-center shrink-0">
+                                <i data-lucide="globe" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex flex-col leading-tight">
+                                <span class="text-base lg:text-lg font-bold text-gray-800">Día Mundial del<br>Medio Ambiente</span>
+                                <span class="text-[#d97706] font-bold mt-1 text-sm lg:text-base">5 de junio</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 border-b border-gray-100 pb-4">
+                            <div class="w-12 h-12 rounded-full bg-[#388e3c] text-white flex items-center justify-center shrink-0">
+                                <i data-lucide="sun" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex flex-col leading-tight">
+                                <span class="text-base lg:text-lg font-bold text-gray-800">Día Internacional de<br>Celebración del Solsticio</span>
+                                <span class="text-[#d97706] font-bold mt-1 text-sm lg:text-base">21 de junio</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-[#388e3c] text-white flex items-center justify-center shrink-0">
+                                <i data-lucide="user" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex flex-col leading-tight">
+                                <span class="text-base lg:text-lg font-bold text-gray-800">Día del Campesino</span>
+                                <span class="text-[#d97706] font-bold mt-1 text-sm lg:text-base">24 de junio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JULIO -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 flex flex-col md:flex-row min-h-[350px]">
+                    <div class="w-full md:w-[45%] flex flex-col">
+                        <div class="bg-[#388e3c] text-white text-center py-3 text-2xl lg:text-3xl font-black tracking-widest uppercase">JULIO</div>
+                        <img src="JULIO.png" alt="" class="w-full h-full object-cover min-h-[200px]">
+                    </div>
+                    <div class="w-full md:w-[55%] p-6 flex flex-col justify-center gap-5">
+                        <div class="flex items-center gap-4 border-b border-gray-100 pb-4">
+                            <div class="w-12 h-12 rounded-full bg-[#388e3c] text-white flex items-center justify-center shrink-0">
+                                <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex flex-col leading-tight">
+                                <span class="text-base lg:text-lg font-bold text-gray-800">Día Internacional Libre<br>de Bolsas de Plástico</span>
+                                <span class="text-[#d97706] font-bold mt-1 text-sm lg:text-base">3 de julio</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-[#388e3c] text-white flex items-center justify-center shrink-0">
+                                <i data-lucide="scale" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex flex-col leading-tight">
+                                <span class="text-sm lg:text-[15px] font-bold text-gray-800">Aniversario de Reconocimiento del "Derecho a un Medio Ambiente Limpio, Saludable y Sostenible" como un Derecho Humano</span>
+                                <span class="text-[#d97706] font-bold mt-1 text-sm lg:text-base">28 de julio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- =========================================================
+             VISTA 9: SÚMATE A NUESTRA CAUSA (ÚLTIMA PANTALLA)
+             ========================================================= -->
+        <div id="view-join" class="hidden transition-all duration-500 ease-in-out opacity-0 translate-y-10 relative w-full min-h-screen bg-[#e8f1e6] flex flex-col overflow-hidden">
+            
+            <div class="absolute top-6 left-6 lg:left-12 z-50 flex gap-4">
+                <button onclick="goToHome(event)" class="bg-white hover:bg-gray-100 text-[#3b5e2b] px-4 py-2.5 rounded-full font-bold flex items-center justify-center shadow-md transition-colors border border-gray-200">
+                    <i data-lucide="home" class="w-5 h-5"></i>
+                </button>
+                <!-- ELIMINADO: Se quitó el botón de VOLVER porque esta es la primera pantalla de la secuencia -->
+            </div>
+
+            <!-- CAMBIADO: Botón Siguiente ahora lleva a Actividades -->
+            <button onclick="goToActivities(event)" class="absolute top-1/2 right-4 lg:right-8 z-50 bg-[#8bc34a] hover:bg-[#689f38] text-white px-4 py-4 md:px-6 md:py-4 rounded-full font-bold flex flex-col md:flex-row items-center gap-2 shadow-xl transition-all group transform -translate-y-1/2 border-2 border-white">
+                <span class="text-xs md:text-sm tracking-widest hidden md:block">SIGUIENTE</span>
+                <i data-lucide="chevron-right" class="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-1 transition-transform"></i>
+            </button>
+
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#eef4ea] via-[#eef4ea]/95 to-[#eef4ea]/40"></div>
+
+            <div class="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-12 h-full flex flex-col lg:flex-row items-center justify-between min-h-screen pt-24 lg:pt-0 pb-16 lg:pb-0">
+                
+                <div class="w-full lg:w-[45%] flex flex-col justify-center text-center lg:text-left mb-16 lg:mb-0 z-20">
+                    <h1 class="text-[#051005] text-6xl md:text-[80px] lg:text-[100px] font-serif font-black leading-[1.05] mb-8 tracking-tight drop-shadow-[0_4px_4px_rgba(255,255,255,0.8)]">
+                        SÚMATE A<br>NUESTRA<br>CAUSA
+                    </h1>
+                    <p class="text-[#1a2f1a] text-lg lg:text-[22px] font-medium leading-relaxed max-w-[480px] mx-auto lg:mx-0">
+                        Forma parte de RUA Nodo UNAS y participa en acciones que promueven el cuidado del ambiente, la educación ambiental y el compromiso universitario.
+                    </p>
+                </div>
+
+                <div class="w-full lg:w-[55%] h-[500px] lg:h-[700px] relative mt-10 lg:mt-0 flex items-center justify-center z-10">
+                    <img src="IMAGEN 1.png" alt="" class="absolute top-[5%] right-[5%] w-[55%] lg:w-[50%] h-auto aspect-video rounded-[10px] border-[6px] border-white shadow-2xl rotate-[5deg] z-10 hover:scale-105 hover:z-40 transition-all duration-300 object-cover">
+                    <img src="IMAGEN 2.png" alt="" class="absolute top-[30%] left-[5%] w-[60%] lg:w-[55%] h-auto aspect-video rounded-[10px] border-[6px] border-white shadow-2xl -rotate-[4deg] z-20 hover:scale-105 hover:z-40 transition-all duration-300 object-cover">
+                    <img src="IMAGNE 3.png" alt="" class="absolute bottom-[5%] right-[10%] w-[55%] lg:w-[50%] h-auto aspect-video rounded-[10px] border-[6px] border-white shadow-2xl rotate-[3deg] z-30 hover:scale-105 hover:z-40 transition-all duration-300 object-cover">
+                </div>
+                
+            </div>
+            
+            <i data-lucide="leaf" class="absolute -bottom-10 -left-10 text-[#4a6b38] w-64 h-64 opacity-20 rotate-45 z-0"></i>
+        </div> 
+
+    </main>
+
+    <!-- Script para renderizar iconos y controlar menú/transiciones -->
+    <script>
+        lucide.createIcons();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        let isMenuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.setAttribute('data-lucide', 'x');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        });
+
+        const viewHome = document.getElementById('view-home');
+        const viewAbout = document.getElementById('view-about');
+        const viewMission = document.getElementById('view-mission');
+        const viewVision = document.getElementById('view-vision');
+        const viewHistory = document.getElementById('view-history');
+        const viewPrinciples = document.getElementById('view-principles'); // AÑADIDO
+        const viewActivities = document.getElementById('view-activities');
+        const viewCalendar = document.getElementById('view-calendar');
+        const viewCalendar2 = document.getElementById('view-calendar-2');
+        const viewJoin = document.getElementById('view-join');
+
+        function switchView(targetView) {
+            // AÑADIDO viewPrinciples AL ARREGLO
+            const allViews = [viewHome, viewAbout, viewMission, viewVision, viewHistory, viewPrinciples, viewActivities, viewCalendar, viewCalendar2, viewJoin];
+            const activeView = allViews.find(v => v && !v.classList.contains('hidden'));
+            
+            if (!targetView || activeView === targetView) return;
+
+            if (activeView) {
+                activeView.classList.remove('opacity-100', 'translate-y-0');
+                activeView.classList.add('opacity-0', 'translate-y-10');
+                
+                setTimeout(() => {
+                    activeView.classList.add('hidden');
+                    
+                    targetView.classList.remove('hidden');
+                    setTimeout(() => {
+                        targetView.classList.remove('opacity-0', 'translate-y-10', '-translate-y-10');
+                        targetView.classList.add('opacity-100', 'translate-y-0');
+                    }, 50);
+                }, 500);
+            } else {
+                targetView.classList.remove('hidden');
+                setTimeout(() => {
+                    targetView.classList.remove('opacity-0', 'translate-y-10', '-translate-y-10');
+                    targetView.classList.add('opacity-100', 'translate-y-0');
+                }, 50);
+            }
+        }
+
+        function closeMenu() {
+            if(isMenuOpen) {
+                isMenuOpen = false;
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            }
+        }
+
+        function goToHome(e) { if(e) e.preventDefault(); closeMenu(); switchView(viewHome); }
+        function goToAbout(e) { if(e) e.preventDefault(); closeMenu(); switchView(viewAbout); }
+        function goToMission(e) { if(e) e.preventDefault(); closeMenu(); switchView(viewMission); }
+        function goToVision(e) { if(e) e.preventDefault(); closeMenu(); switchView(viewVision); }
+        function goToHistory(e) { if(e) e.preventDefault(); closeMenu(); switchView(viewHistory); }
+        function goToPrinciples(e) { if(e) e.preventDefault(); closeMenu(); switchView(viewPrinciples); } // AÑADIDO FUNCIÓN
+        function goToActivities(e) { if(e) e.preventDefault(); closeMenu(); switchView(viewActivities); }
+        function goToCalendar(e) { if(e) e.preventDefault(); closeMenu(); switchView(viewCalendar); }
+        function goToCalendar2(e) { if(e) e.preventDefault(); closeMenu(); switchView(viewCalendar2); }
+        function goToJoin(e) { if(e) e.preventDefault(); closeMenu(); switchView(viewJoin); }
+    </script>
+</body>
+</html>
